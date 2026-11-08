@@ -4,14 +4,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     steps:
       - uses: armbian/build@main
         with:
           armbian_token: ${{ secrets.GITHUB_TOKEN }}
           armbian_board: "radxa-dragon-q6a" # orangepi5 bananapif3
-          armbian_kernel_branch: "current" # edge
-          armbian_release: "resolute" # trixie
+          armbian_kernel_branch: "vendor" # edge
+          armbian_release: "trixie" # resolute
           armbian_target: "build"
           armbian_ui: "minimal" # server xfce
           armbian_runner_clean: "yes" # recommended for Github runners
